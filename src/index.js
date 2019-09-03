@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './myStyles.scss';
+import Header from './components/header.js';
 
 
 class App extends Component {
@@ -15,6 +16,8 @@ class App extends Component {
       Players: null,
       Active: "Home"
     };
+
+    this.changeScreen = this.changeScreen.bind(this);
 
   }
 
@@ -30,22 +33,33 @@ class App extends Component {
     });
   }
 
+  changeScreen(screen) {
+    if (screen === "Home" || screen === "Stats" || screen === "Players") {
+      this.setState({
+        Active: screen,
+      })
+  } else {
+  return ("Not a valid screen")
+  }
+}
 
-  render() {
-    const { Home, Stats, Players, Active } = this.state;
 
-    return (
-      <Router>
-        <Route exact={true} path="/" render={() => (
-          <div className="app">
-            {Home && Active === "Home" ? <Home /> : <p></p>}
-            {Stats && Active === "Stats" ? <Stats /> : <p></p>}
-            {Players && Active === "Players" ? <Players /> : <p></p>}
-          </div>
-        )} />
-      </Router>
-    );
-  };
+render() {
+  const { Home, Stats, Players, Active } = this.state;
+
+  return (
+    <Router>
+      <Route exact={true} path="/" render={() => (
+        <div className="app">
+          <Header changeScreen={this.changeScreen} />
+          {Home && Active === "Home" ? <Home /> : <p></p>}
+          {Stats && Active === "Stats" ? <Stats /> : <p></p>}
+          {Players && Active === "Players" ? <Players /> : <p></p>}
+        </div>
+      )} />
+    </Router>
+  );
+};
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
