@@ -1,7 +1,6 @@
-$color-green-venado: #50B642;
-$color-yellow-venado: #F5BD22;
-$color-dark-green: #004030;
-
+$green-venado: #50b642;
+$yellow-venado: #f5bd22;
+$dark-green: #004030;
 
 /* ------------------- Mobile First Design --------------------- */
 body {
@@ -24,7 +23,7 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   position: fixed;
@@ -38,7 +37,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-left: 10px;
-  padding-top: 10px; 
+  padding-top: 10px;
+  background-color: #fff;
 }
 
 .drawer-icon {
@@ -57,10 +57,10 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 
 .drawer-header-image {
-  
   height: 110px;
   width: 88px;
 }
@@ -77,33 +77,92 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+
+  .drawer-item-icon-container {
+    justify-content: flex-start;
+    align-content: center;
+    margin-left: 5px;
+
+    .drawer-item-dot {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: gray;
+    }
+  }
 }
 
-.drawer-item-icon-container {
+.drawer-item-active {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  color: blue;
+
+  .drawer-item-icon-container {
+    justify-content: flex-start;
+    align-content: center;
+    margin-left: 5px;
+
+    .drawer-item-dot {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: blue;
+    }
+  }
+}
+
+.drawer-text-container {
+  width: 90%;
+  height: 100%;
+  padding-left: 15px;
   justify-content: flex-start;
   align-content: center;
 }
 
-.drawer-item-dot {
-height: 20px;
-width: 20px;
-border-radius: 50%;
-background-color: gray; 
+.home {
+  margin-top: 40px;
+  width: 100%;
 }
 
-.drawer-text-container {
-width: 90%;
-height: 100%;
-padding-left: 15px;
-justify-content: flex-start;
-align-content: center;
+.header-home {
+  height: 140px;
+  width: 100%;
 }
+
+.home-head-image {
+  height: 120px;
+  width: 92px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selector-container {
+  display: flex;
+}
+
+.selector {
+  width: 50%;
+  border-color: gray;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+}
+
+.selector-text {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
 /* ------------------- Tablet Styles --------------------------- */
 @media only screen and (min-device-width: 481px) and (max-width: 860px) {
-
 }
 /* ------------------- Desktop Styles --------------------- */
 
 @media only screen and (min-device-width: 961px) {
-
 }
