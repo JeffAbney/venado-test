@@ -42,7 +42,8 @@ class Header extends Component {
             <img className="drawer-header-image" src={venados_escudo} />
           </div>
           <div className="drawer-list">
-            <div className="drawer-item" onClick={() => this.goToScreen("Home")}>
+            <div className={this.props.active === "Home" ? "drawer-item-active" : "drawer-item"} 
+             onClick={() => this.goToScreen("Home")}>
               <div className="drawer-item-icon-container">
                 <div className="drawer-item-dot"></div>
               </div>
@@ -51,7 +52,8 @@ class Header extends Component {
               </div>
             </div>
 
-            <div className="drawer-item" onClick={() => this.goToScreen("Stats")}>
+            <div className={this.props.active === "Stats" ? "drawer-item-active" : "drawer-item"} 
+            onClick={() => this.goToScreen("Stats")}>
               <div className="drawer-item-icon-container">
                 <div className="drawer-item-dot"></div>
               </div>
@@ -60,7 +62,8 @@ class Header extends Component {
               </div>
             </div>
 
-            <div className="drawer-item" onClick={() => this.goToScreen("Players")}>
+            <div className={this.props.active === "Players" ? "drawer-item-active" : "drawer-item"} 
+            onClick={() => this.goToScreen("Players")}>
               <div className="drawer-item-icon-container">
                 <div className="drawer-item-dot"></div>
               </div>
