@@ -14,11 +14,12 @@ class App extends Component {
       Home: null,
       Stats: null,
       Players: null,
-      Active: "Home"
+      active: "Home",
+      games: null,
     };
 
     this.changeScreen = this.changeScreen.bind(this);
-
+    this.getGames = this.getGames.bind(this);
   }
 
   componentDidMount() {
@@ -31,35 +32,60 @@ class App extends Component {
     import(/* webpackChunkName: 'Players' */ './components/players.js').then(Players => {
       this.setState({ Players: Players.default })
     });
+   // this.getGames();
+  }
+
+  getGames() {
+    console.log("Getting Game Data");
+    var data = null;
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4) {
+        console.log("Wow!");
+        console.log(this.responseText);
+      } else {
+        console.log("something is wrong");
+      }
+    });
+
+    xhr.open("GET", "https://crossorigin.me/https://google.com");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.setRequestHeader("Postman-Token", "2aae1e05-7b5e-4703-98b5-548d58c4749c");
+
+    xhr.send(data);
   }
 
   changeScreen(screen) {
     if (screen === "Home" || screen === "Stats" || screen === "Players") {
       this.setState({
-        Active: screen,
+        active: screen,
       })
-  } else {
-  return ("Not a valid screen")
+    } else {
+      return ("Not a valid screen")
+    }
   }
-}
 
 
-render() {
-  const { Home, Stats, Players, Active } = this.state;
+  render() {
+    const { Home, Stats, Players, active } = this.state;
 
-  return (
-    <Router>
-      <Route exact={true} path="/" render={() => (
-        <div className="app">
-          <Header changeScreen={this.changeScreen} />
-          {Home && Active === "Home" ? <Home /> : <p></p>}
-          {Stats && Active === "Stats" ? <Stats /> : <p></p>}
-          {Players && Active === "Players" ? <Players /> : <p></p>}
-        </div>
-      )} />
-    </Router>
-  );
-};
+    return (
+      <Router>
+        <Route exact={true} path="/" render={() => (
+          <div className="app">
+            <Header changeScreen={this.changeScreen} active={this.state.active} />
+            {Home && active === "Home" ? <Home /> : <p></p>}
+            {Stats && active === "Stats" ? <Stats /> : <p></p>}
+            {Players && active === "Players" ? <Players /> : <p></p>}
+          </div>
+        )} />
+      </Router>
+    );
+  };
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
