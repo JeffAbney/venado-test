@@ -78,9 +78,9 @@ class App extends Component {
         <Route exact={true} path="/" render={() => (
           <div className="app">
             <Header changeScreen={this.changeScreen} active={this.state.active} />
-            {Home && active === "Home" ? <Home /> : <p></p>}
-            {Stats && active === "Stats" ? <Stats /> : <p></p>}
-            {Players && active === "Players" ? <Players /> : <p></p>}
+            {Home && active === "Home" ? <Home /> : ""}
+            {Stats && active === "Stats" ? <Stats /> : ""}
+            {Players && active === "Players" ? <Players /> : ""}
           </div>
         )} />
       </Router>
