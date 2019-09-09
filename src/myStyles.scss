@@ -58,6 +58,7 @@ body {
 .drawer-menu {
   height: 100%;
   width: 75%;
+  background-color: #fff;
 }
 
 .drawer-header {
@@ -148,8 +149,8 @@ body {
 }
 
 .home-head-image {
-  height: 120px;
-  width: 92px;
+  height: 100px;
+  width: 100px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -157,6 +158,7 @@ body {
 
 .selector-container {
   display: flex;
+  background-color: #fff;
 }
 
 .selector {
@@ -171,6 +173,16 @@ body {
     font-family: "Roboto", sans-serif;
     color: #000;
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 39px;
+  width: 100%;
+}
+
+.placeholder {
+  height: 39px;
 }
 
 .games-list-container {
@@ -215,13 +227,13 @@ flex-direction: column;
 }
 
 .day-number {
-  font-size: 14px;
+  font-size: 16px;
   margin: 8px 2px 2px 2px;
   
 }
 
 .day-word {
-  font-size: 14px;
+  font-size: 16px;
   margin: 2px;
 }
 
@@ -251,7 +263,7 @@ flex-direction: column;
 
 .team-name {
   font-weight: bold;
-  font-size: 8px;
+  font-size: 10px;
   text-align: center;
   color: #fff;
   margin-top: 15px;
