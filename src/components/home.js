@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { gamesDataFile } from '../../data.js';
+import { GamesDataFile } from '../../data.js';
 import venadosLogo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo1.jpg';
 import Background from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/green_background.jpg';
 import calendar from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/calendar.png';
 
 var monthList;
-const games = gamesDataFile.data.games;
+const games = GamesDataFile.data.games;
 
 let gamesCopa = null;
 let gamesAscenso = null;
@@ -104,7 +104,7 @@ class Home extends Component {
       this.setState({
         sticky: "",
       })
-    } else if (window.pageYOffset >= sticky - 39 ) {
+    } else if (window.pageYOffset >= sticky - 46 ) {
         this.setState({
           sticky: "sticky",
         })
