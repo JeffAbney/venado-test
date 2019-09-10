@@ -14,7 +14,7 @@ class App extends Component {
       Home: null,
       Stats: null,
       Players: null,
-      active: "Home",
+      activeScreen: "Home",
       games: null,
     };
 
@@ -62,7 +62,7 @@ class App extends Component {
   changeScreen(screen) {
     if (screen === "Home" || screen === "Stats" || screen === "Players") {
       this.setState({
-        active: screen,
+        activeScreen: screen,
       })
     } else {
       return ("Not a valid screen")
@@ -71,16 +71,16 @@ class App extends Component {
 
 
   render() {
-    const { Home, Stats, Players, active } = this.state;
+    const { Home, Stats, Players, activeScreen } = this.state;
 
     return (
       <Router>
         <Route exact={true} path="/" render={() => (
           <div className="app">
-            <Header changeScreen={this.changeScreen} active={this.state.active} />
-            {Home && active === "Home" ? <Home /> : ""}
-            {Stats && active === "Stats" ? <Stats /> : ""}
-            {Players && active === "Players" ? <Players /> : ""}
+            <Header changeScreen={this.changeScreen} activeScreen={this.state.activeScreen} />
+            {Home && activeScreen === "Home" ? <Home /> : ""}
+            {Stats && activeScreen === "Stats" ? <Stats /> : ""}
+            {Players && activeScreen === "Players" ? <Players /> : ""}
           </div>
         )} />
       </Router>
