@@ -86,6 +86,7 @@ class Header extends Component {
         <div className="hamburger-icon-container">
           <img className="drawer-icon" src={drawer_icon} onClick={this.toggleActive} />
         </div>
+        <h1 className="header-text">{this.props.activeScreen}</h1>
         {this.drawerMenu()}
       </div>
     )
