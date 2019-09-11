@@ -32,7 +32,7 @@ class App extends Component {
     import(/* webpackChunkName: 'Players' */ './components/players.js').then(Players => {
       this.setState({ Players: Players.default })
     });
-   // this.getGames();
+  // this.getGames();
   }
 
   getGames() {
@@ -51,7 +51,7 @@ class App extends Component {
       }
     });
 
-    xhr.open("GET", "https://crossorigin.me/https://google.com");
+    xhr.open("GET", "https://venados.dacodes.mx/api/games");
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.setRequestHeader("Postman-Token", "2aae1e05-7b5e-4703-98b5-548d58c4749c");
