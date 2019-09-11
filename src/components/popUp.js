@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-/**
- * Component that alerts if you click outside of it
- */
 export default class OutsideAlerter extends Component {
   constructor(props) {
     super(props);
@@ -32,13 +29,12 @@ export default class OutsideAlerter extends Component {
    */
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-        console.log("popUp trying to close");
       this.props.closePop();
     }
   }
 
   render() {
-    return <div className="modal-content" ref={this.setWrapperRef}>{this.props.children}</div>;
+    return <div className={this.props.classes} ref={this.setWrapperRef}>{this.props.children}</div>;
   }
 }
 

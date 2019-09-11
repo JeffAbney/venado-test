@@ -88,8 +88,8 @@ return birthday;
 
         {/* Create Player PopUp */}
         {this.state.pop ?
-          <div className='modal' >
-            <OutsideAlerter closePop={this.closePop}>
+          <div className='modal'>
+            <OutsideAlerter classes={"modal-content"} closePop={this.closePop}>
               <div className="pop-up-info-container">
                 <h1 className='pop-up-info-title'>Ficha Tecnica</h1>
                 <div className="pop-up-image-container">
