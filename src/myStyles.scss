@@ -2,14 +2,6 @@ $green-venado: #50b642;
 $yellow-venado: #f5bd22;
 $dark-green: #004030;
 
-@font-face {
-  font-family: "protest";
-  src: local("/home/jeff/git_workspace/React-Projects/venado-test/assets/fonts/protest.ttf") format("truetype"),
-    local("/home/jeff/git_workspace/React-Projects/venado-test/assets/fonts/protest.woff;") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* ------------------- Mobile First Design --------------------- */
 
 body {
@@ -31,25 +23,32 @@ body {
 
 .header {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  background-color: transparent;
+}
+
+.header-title {
+  width: 100%;
   background-color: #fff;
 }
 
 .header-text {
+  display: inline;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  margin-left: 20px;
 }
 
 .hamburger-icon-container {
-  display: flex;
-  padding-left: 10px;
+  display: inline-block;
+  width: 20%;
+  padding-left: 0px;
   padding-top: 10px;
   background-color: #fff;
 }
@@ -63,9 +62,17 @@ body {
 }
 
 .drawer-menu {
+  height: 0;
+  width: 0;
+  background-color: #fff;
+  overflow: hidden;
+  -webkit-transition: width .5s; /* Safari prior 6.1 */
+  transition: width .5s;
+}
+
+.menu-active {
   height: 100%;
   width: 75%;
-  background-color: #fff;
 }
 
 .drawer-header {
@@ -74,7 +81,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: $green-venado;
 }
 
 .drawer-header-image {
@@ -86,6 +93,7 @@ body {
   width: 100%;
   height: 100%;
   align-items: flex-start;
+  background-color: #888;
 }
 
 .drawer-item {
@@ -157,7 +165,7 @@ body {
 
 .home-head-image {
   height: 100px;
-  width: 100px;
+  width: 80px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -265,6 +273,11 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.team-image-venados {
+  height: 50px;
+  width: 40px;
 }
 
 .team-name {

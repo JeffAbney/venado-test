@@ -1,8 +1,8 @@
 
 import React, { Component } from "react";
 import drawer_icon from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/drawer_icon.png";
-import venados_escudo from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.jpg";
-
+import venados_escudo from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png";
+import OutsideAlerter from './popUp.js';
 
 
 class Header extends Component {
@@ -11,39 +11,57 @@ class Header extends Component {
     super(props);
 
     this.state = {
-      active: false,
+      menuActive: false,
     };
 
     this.toggleActive = this.toggleActive.bind(this);
     this.goToScreen = this.goToScreen.bind(this);
-    this.drawerMenu = this.drawerMenu.bind(this);
+    this.closePop = this.closePop.bind(this);
   }
 
   toggleActive() {
-    console.log("Clicky");
     this.setState({
-      active: true,
+      menuActive: true,
     })
   }
 
   goToScreen(param) {
     console.log("Go to", param);
     this.setState({
-      active: false,
+      menuActive: false,
     })
     this.props.changeScreen(param);
   }
 
-  drawerMenu = () => {
-    if (this.state.active) {
-      return (
-        <div className="drawer-menu">
+  closePop() {
+    this.setState({
+      menuActive: false,
+    });
+  }
+
+
+  render() {
+    return (
+
+      <div className="header" id="header">
+        <div className="header-title">
+          <div className="hamburger-icon-container">
+            <img className="drawer-icon" src={drawer_icon} onClick={this.toggleActive} />
+          </div>
+          <h1 className="header-text">{this.props.activeScreen}</h1>
+        </div>
+
+
+        <OutsideAlerter
+          classes={`drawer-menu ${this.state.menuActive ? 'menu-active' : ''}`}
+          closePop={this.closePop}
+        >
           <div className="drawer-header">
             <img className="drawer-header-image" src={venados_escudo} />
           </div>
           <div className="drawer-list">
-            <div className={this.props.active === "Home" ? "drawer-item-active" : "drawer-item"} 
-             onClick={() => this.goToScreen("Home")}>
+            <div className={this.props.active === "Home" ? "drawer-item-active" : "drawer-item"}
+              onClick={() => this.goToScreen("Home")}>
               <div className="drawer-item-icon-container">
                 <div className="drawer-item-dot"></div>
               </div>
@@ -52,8 +70,8 @@ class Header extends Component {
               </div>
             </div>
 
-            <div className={this.props.active === "Stats" ? "drawer-item-active" : "drawer-item"} 
-            onClick={() => this.goToScreen("Stats")}>
+            <div className={this.props.active === "Stats" ? "drawer-item-active" : "drawer-item"}
+              onClick={() => this.goToScreen("Stats")}>
               <div className="drawer-item-icon-container">
                 <div className="drawer-item-dot"></div>
               </div>
@@ -62,8 +80,8 @@ class Header extends Component {
               </div>
             </div>
 
-            <div className={this.props.active === "Players" ? "drawer-item-active" : "drawer-item"} 
-            onClick={() => this.goToScreen("Players")}>
+            <div className={this.props.active === "Players" ? "drawer-item-active" : "drawer-item"}
+              onClick={() => this.goToScreen("Players")}>
               <div className="drawer-item-icon-container">
                 <div className="drawer-item-dot"></div>
               </div>
@@ -72,23 +90,9 @@ class Header extends Component {
               </div>
             </div>
           </div>
-        </div>);
-    } else {
-      return <p></p>;
-    }
-
-  }
-
-  render() {
-    return (
-
-      <div className="header" id="header">
-        <div className="hamburger-icon-container">
-          <img className="drawer-icon" src={drawer_icon} onClick={this.toggleActive} />
-        </div>
-        <h1 className="header-text">{this.props.activeScreen}</h1>
-        {this.drawerMenu()}
+        </OutsideAlerter>
       </div>
+
     )
   }
 }
