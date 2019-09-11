@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import drawer_icon from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/drawer_icon.png";
 import venados_escudo from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png";
+//import component that closes when it detects a click outside of itself
 import OutsideAlerter from './popUp.js';
-
 
 class Header extends Component {
 
@@ -16,7 +16,7 @@ class Header extends Component {
 
     this.toggleActive = this.toggleActive.bind(this);
     this.goToScreen = this.goToScreen.bind(this);
-    this.closePop = this.closePop.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
   }
 
   toggleActive() {
@@ -33,7 +33,7 @@ class Header extends Component {
     this.props.changeScreen(param);
   }
 
-  closePop() {
+  closeMenu() {
     this.setState({
       menuActive: false,
     })
@@ -51,10 +51,9 @@ class Header extends Component {
           <h1 className="header-text">{this.props.activeScreen}</h1>
         </div>
 
-
         <OutsideAlerter
           classes={`drawer-menu ${this.state.menuActive ? 'menu-active' : ''}`}
-          closePop={this.closePop}
+          closePop={this.closeMenu}
         >
           <div className="drawer-header">
             <img className="drawer-header-image" src={venados_escudo} />

@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import { PlayersDataFile } from '../../data.js';
+//import component that closes when it detects a click outside of itself
 import OutsideAlerter from './popUp.js';
 
 const PlayersList = PlayersDataFile.data.team;
-
-
-
-//Create PopUp Window for players --------------------------------------
-
-// Get the modal
-
-
-
-// When the user clicks anywhere outside of the modal, close it
-
 
 class Players extends Component {
 
@@ -61,6 +51,8 @@ class Players extends Component {
       )
     )
   }
+  
+  //Birthdya comes formatted in SQL DateTime, this function formats to desired string.
 getFormatedDate(playerBirthday) {
   var birthdayDT = new Date(playerBirthday);
 var dd = birthdayDT.getDate();
@@ -110,7 +102,7 @@ return birthday;
                   <p className="pop-up-detail-data">{`${String(currentPlayer.weight)} KG`}</p>
                   <h2 className="pop-up-detail-title">ALTURA</h2>
                   <p className="pop-up-detail-data">{`${String(currentPlayer.height)} M`}</p>
-                  <h2 className="pop-up-detail-title">EQUIP ANTERIOR</h2>
+                  <h2 className="pop-up-detail-title">EQUIPO ANTERIOR</h2>
                   <p className="pop-up-detail-data">{currentPlayer.last_team}</p>
                   <h2 className="pop-up-detail-title">NUMERO</h2>
                   <p className="pop-up-detail-data">{String(currentPlayer.number)}</p>

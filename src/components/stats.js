@@ -2,6 +2,8 @@ import React from 'react';
 import logo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png';
 import background from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/green_background.jpg';
 
+
+//Stats API is empty, substituted invented data and hardcoded it.
 const position = "1";
 const jj = "2";
 const dg = "5";

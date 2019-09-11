@@ -22,6 +22,8 @@ let getGamesAscenso = () =>
     :
     gamesAscenso;
 
+
+//Arrays of links to google calendar events sorted by League and then month
 const CalendarArrayCopa = {
   "Julio":
     [
@@ -68,8 +70,6 @@ const CalendarArrayAscenso = {
 
 }
 
-
-
 class Home extends Component {
 
   constructor(props) {
@@ -85,6 +85,8 @@ class Home extends Component {
     this.gameList = this.gameList.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
   }
+
+  //Detect Scroll to make header bar sticky
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);

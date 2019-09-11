@@ -33,6 +33,8 @@ class App extends Component {
       this.setState({ Players: Players.default })
     });
   // this.getGames();
+  // Due to CORS, Origin of this app must be added to server for fetch xhr request to work.
+  // Data is currently hardcoded into data.js
   }
 
   getGames() {
