@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
-import drawer_icon from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/drawer_icon.png";
-import venados_escudo from "/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png";
+import drawer_icon from "../static/images/drawer_icon.png";
+import venados_escudo from "../static/images/venados_escudo.png";
 //import component that closes when it detects a click outside of itself
 import OutsideAlerter from './popUp.js';
 

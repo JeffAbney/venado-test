@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { GamesDataFile } from '../../data.js';
-import venadosLogo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png';
-import Background from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/green_background.jpg';
-import calendar from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/calendar.png';
+import venadosLogo from '../static/images/venados_escudo.png';
+import Background from '../static/images/green_background.jpg';
+import calendar from '../static/images/calendar.png';
 
 var monthList;
 const games = GamesDataFile.data.games;
