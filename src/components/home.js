@@ -99,8 +99,6 @@ class Home extends Component {
     var sticky = selector.offsetTop;
 
     if (this.state.sticky === 'sticky' && window.pageYOffset < 140) {
-      console.log('window is', window.pageYOffset);
-      console.log("sticky is", sticky);
       this.setState({
         sticky: "",
       })
