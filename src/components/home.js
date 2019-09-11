@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { GamesDataFile } from '../../data.js';
-import venadosLogo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo1.jpg';
+import venadosLogo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png';
 import Background from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/green_background.jpg';
 import calendar from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/calendar.png';
 
@@ -175,7 +175,7 @@ class Home extends Component {
                 <p className='day-word'>{getDayName(leagueByMonth[month][i].datetime)}</p>
               </div>
               <div className='team-container'>
-                <img className='team-image' src={venadosLogo} />
+                <img className='team-image team-image-venados' src={venadosLogo} />
                 <p className="team-name">Venados F.C.</p>
               </div>
               <div className='score-container'>

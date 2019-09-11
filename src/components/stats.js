@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.jpg';
+import logo from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/venados_escudo.png';
 import background from '/home/jeff/git_workspace/React-Projects/venado-test/assets/images/green_background.jpg';
 
 const position = "1";
